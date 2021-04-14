@@ -10,5 +10,15 @@ export default new Router({
       name: 'join',
       component: () => import('@/page/Join.vue')
     },
+    {
+      path: '/zoom',
+      name: 'zoom',
+      component: () => import('@/page/Zoom.vue')      
+    },
+    {
+      path: '/zoomIframe',
+      name: 'zoomIframe',
+      component: () => import('@/page/ZoomIframe.vue')      
+    }
   ]
 })
