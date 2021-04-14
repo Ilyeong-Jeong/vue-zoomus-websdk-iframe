@@ -33,31 +33,31 @@
       this.meetConfig = {
         apiKey: API_KEY,
         apiSecret: API_SECRET,
-        meetingNumber: this.$route.query.meetingId,
         userName: this.$route.query.name,
+        meetingNumber: this.$route.query.meetingId,
         passWord: this.$route.query.meetingPwd,
-        leaveUrl: "https://zoom.us",
+        leaveUrl: "https://www.zoom.us",
         role: 0
       };
 
       this.signature = ZoomMtg.generateSignature({
-        meetingNumber: this.meetConfig.meetingNumber,
         apiKey: this.meetConfig.apiKey,
         apiSecret: this.meetConfig.apiSecret,
+        meetingNumber: this.meetConfig.meetingNumber,
         role: this.meetConfig.role,
       });
 
       ZoomMtg.init({
-        leaveUrl: "http://www.zoom.us",
+        leaveUrl: "https://www.zoom.us",
         isSupportAV: true,
         success: () => {
           ZoomMtg.join({
-            meetingNumber: this.meetConfig.meetingNumber,
-            userName: this.meetConfig.userName,
-            signature: this.signature,
             apiKey: this.meetConfig.apiKey,
-            userEmail: "useremail@email.com",
+            userName: this.meetConfig.userName,
+            meetingNumber: this.meetConfig.meetingNumber,
             passWord: this.meetConfig.passWord,
+            signature: this.signature,
+            userEmail: "useremail@email.com",
           });
         }
       });

@@ -45,13 +45,24 @@
         ></v-text-field>
       </div>
 
-      <v-btn
-        elevation="2"
-        color="primary"
-        @click="join()"
-      >
-        Join
-      </v-btn>
+      <div class="d-flex">
+        <v-btn
+          class="mr-2" 
+          elevation="2"
+          color="primary"
+          @click="zoom()"
+        >
+          Zoom Join
+        </v-btn>
+
+        <v-btn
+          elevation="2"
+          color="teal"
+          @click="zoomIframe()"
+        >
+          Iframe Join
+        </v-btn>
+      </div>  
     </v-sheet>
   </div>
 </template>
@@ -61,16 +72,27 @@
   export default {
     data() {
       return {
-        name      : '',
-        meetingId : '',
+        name: '',
+        meetingId: '',
         meetingPwd: '',
       }
     },
 
     methods: {
-      join () {
+      zoom () {
         this.$router.push({ 
           name: 'zoom', 
+          query: { 
+            name: this.name, 
+            meetingId: this.meetingId, 
+            meetingPwd: this.meetingPwd, 
+          } 
+        });
+      },
+
+      zoomIframe () {
+        this.$router.push({ 
+          name: 'zoomIframe',
           query: { 
             name: this.name, 
             meetingId: this.meetingId, 

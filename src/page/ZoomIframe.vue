@@ -11,13 +11,17 @@
     <iframe 
       width="500" 
       height="500"
-      src="http://localhost:8080/#/zoom?name=hi&meetingId=7096480064&meetingPwd=8cUFrm"
+      :src="src"
     ></iframe>
   </div>  
 </template>
 
 <script>
   export default {
-
+    computed: {
+      src () {
+        return `http://localhost:8080/zoom?name=${this.$route.query.name}&meetingId=${this.$route.query.meetingId}&meetingPwd=${this.$route.query.meetingPwd}`;
+      }
+    }
   };
 </script>

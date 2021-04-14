@@ -1,5 +1,7 @@
 # vue-zoomus-websdk-iframe
-**zoom 회의를 iframe 형태로 출력 Sample**
+**zoom 회의를 iframe으로 띄우기 Sample**
+
+:warning: 상태 관리 라이브러리를 사용하지 않고 router query로 필요 인자를 넘김(config 요소를 노출시키므로 deprecated).
 
 ## Project setup
 ```
