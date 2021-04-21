@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
 import App from '@/App.vue';
 
@@ -29,7 +29,17 @@ export default new Router({
           path: 'zoomIframe',
           name: 'zoomIframe',
           component: () => import('@/page/ZoomIframe.vue')      
-        }
+        },
+        {
+          path: 'fixedZoom',
+          name: 'fixedZoom',
+          component: () => import('@/page/FixedZoom.vue')      
+        },
+        {
+          path: 'fixedZoomIframe',
+          name: 'fixedZoomIframe',
+          component: () => import('@/page/FixedZoomIframe.vue')      
+        },
       ]
     },
     
